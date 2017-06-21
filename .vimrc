@@ -30,6 +30,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Dim inactive windows
+Plug 'blueyed/vim-diminactive'
+
 call plug#end()
 
 " Set leader to space
@@ -40,6 +43,9 @@ let g:maplocalleader = " "
 
 " Enable mouse movement
 set mouse=a
+
+" No swap files
+set noswapfile
 
 " <Leader><Leader>: Open files
 nnoremap <silent> <Leader><Leader> :Files<CR>
@@ -56,6 +62,10 @@ set statusline+=%F\ %l\:%c
 
 " Highlight words matched in search
 set hlsearch
+hi Search guibg=LightGreen
+
+" Set the background to black`
+highlight Normal guifg=grey guibg=black
 
 " Highlight current line
 set cursorline
@@ -68,6 +78,9 @@ set rtp+=~/.fzf
 " set mouse+=a"
 syntax enable
 colorscheme monokai
+
+" Make search fzf previews full screen
+let g:fzf_layout = { 'window': '-tabnew' }
 
 " Enable the list of buffers
 " let g:airline#extensions#tabline#enabled = 1
