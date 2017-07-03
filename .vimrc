@@ -33,6 +33,12 @@ Plug 'vim-airline/vim-airline-themes'
 " Dim inactive windows
 Plug 'blueyed/vim-diminactive'
 
+" Seoul low contrast color scheme
+Plug 'junegunn/seoul256.vim'
+
+" Adds Ctrl-dir seamlessly btw vim, tmux and fzf
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 " Set leader to space
@@ -58,6 +64,7 @@ nnoremap <leader>kb :NERDTreeToggle<CR>
 
 let g:go_fmt_command = "goimports"
 
+" Make GoFmt also handle imports on save
 set statusline+=%F\ %l\:%c
 
 " Highlight words matched in search
@@ -77,45 +84,18 @@ set nu
 set rtp+=~/.fzf
 " set mouse+=a"
 syntax enable
-colorscheme monokai
+" colorscheme monokai
+
+" Unified color scheme (default: dark)
+let g:seoul256_background = 233
+colo seoul256
 
 " Make search fzf previews full screen
 let g:fzf_layout = { 'window': '-tabnew' }
 
-" Enable the list of buffers
-" let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" " Colour theme for airline
-" let g:airline_theme='bubblegum'
-
-" This allows buffers to be hidden if you've modified a buffer.
-" This is almost a must if you wish to use buffers in this way.
-" set hidden
-
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-" nmap <c-t> :enew<cr>
-
-" Move to the next buffer
-" nmap <c-l> :bnext<CR>
-
-" Move to the previous buffer
-" nmap <c-S-h> :bprevious<CR>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-" nmap <c-w> :bd <BAR> :bp <CR>
-
-" Show all open buffers and their status
-" nmap <c>bl :ls<CR>
-
 " Allow statusline to change color when it's in the active split
 hi StatusLine	ctermfg=8	ctermbg=2	cterm=NONE
 hi StatusLineNC	ctermfg=2	ctermbg=8	cterm=NONE
-
-" Maps leader to fzf
-"noremap <leader><leader> :Files<CR>
 
 
 augroup auglobal
