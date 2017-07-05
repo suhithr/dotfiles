@@ -77,6 +77,9 @@ highlight Normal guifg=grey guibg=black
 " Highlight current line
 set cursorline
 
+" Save the macro to insert logrus.Info globally
+let @l = 'ilogrus.Info()'
+
 " Set status bar
 set laststatus=2
 " Enable line numbers
