@@ -53,6 +53,9 @@ set mouse=a
 " No swap files
 set noswapfile
 
+" set tabs to 4 spaces
+set tabstop=4
+
 " <Leader><Leader>: Open files
 nnoremap <silent> <Leader><Leader> :Files<CR>
 
@@ -79,6 +82,9 @@ set cursorline
 
 " Save the macro to insert logrus.Info globally
 let @l = 'ilogrus.Info()'
+
+" Save macro to insert // TODO(suhith): globally
+let @j = 'i// TODO(suhith):a '
 
 " Set status bar
 set laststatus=2
