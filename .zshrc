@@ -26,9 +26,8 @@ alias rczsh='vim ~/.zshrc'
 alias rcvim='vim ~/.vimrc'
 alias rctmux='vim ~/.tmux.conf'
 
-# added by Anaconda2 4.3.1 installer
-export PATH="/home/suhith/anaconda2/bin:$PATH"
-export JAVA_HOME="/usr/bin/java"
-export PATH=$HOME/bin:$PATH
+# open stuff easily
+alias just-open='gnome-open'
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

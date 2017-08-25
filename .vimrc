@@ -21,7 +21,8 @@ Plug 'hinshun/fzf.vim'
 " Text search
 Plug 'easymotion/vim-easymotion'
 
-Plug 'terryma/vim-multiple-cursors'
+" Syntax checker (requires pip install flake8 to be installed)
+" Plug 'scrooloose/syntastic'
 
 " Git inside vim
 Plug 'tpope/vim-fugitive'
