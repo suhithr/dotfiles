@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Swapping capslock with escape
+setxkbmap -option caps:swapescape
+
 # Custom Commands
 alias music-dl='youtube-dl -x --audio-format mp3'
 
@@ -31,3 +34,5 @@ alias just-open='gnome-open'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:/home/suhith/Downloads/Software/GeoExpressCLUtils-9.5.0.4326-linux64/bin/
+export PATH=$PATH:/usr/local/go/bin
