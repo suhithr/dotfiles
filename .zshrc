@@ -11,7 +11,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Swapping capslock with escape
-setxkbmap -option caps:swapescape
+#setxkbmap -option caps:swapescape # to swap caps and escape
+# setxkbmap -option caps:none # to deactivate
+setxkbmap -option caps:escape # to make it an additional escape
 
 # Custom Commands
 alias music-dl='youtube-dl -x --audio-format mp3'
@@ -29,10 +31,13 @@ alias rczsh='vim ~/.zshrc'
 alias rcvim='vim ~/.vimrc'
 alias rctmux='vim ~/.tmux.conf'
 
+# Quickly shift to the go working directory
+alias work-go='cd go/src/github.com/suhithr/'
+
 # open stuff easily
 alias just-open='gnome-open'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:/home/suhith/Downloads/Software/GeoExpressCLUtils-9.5.0.4326-linux64/bin/
-export PATH=$PATH:/usr/local/go/bin
+# Setting gopath
+export GOPATH=$HOME/go
