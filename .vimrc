@@ -1,6 +1,13 @@
 " Make sure vim-gnome / vim-gtk is installed, so you get X11 support on ubuntu
 " it's needed forusage of the system clipboard
 
+" Automate install of vim plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 
 " Vim-go plugin "
