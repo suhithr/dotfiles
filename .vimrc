@@ -1,5 +1,6 @@
 " Make sure vim-gnome / vim-gtk is installed, so you get X11 support on ubuntu
 " it's needed forusage of the system clipboard
+set clipboard=unnamedplus
 
 " Automate install of vim plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -136,3 +137,6 @@ augroup BgHighlight
     autocmd WinEnter * set cul
     autocmd WinLeave * set nocul
 augroup END
+
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
