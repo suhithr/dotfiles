@@ -19,10 +19,8 @@ fi
 
 if [ ${os} == "mac" ]; then
   # Install brew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew update
-  # Speed up homebrew installation
-  export HOMEBREW_NO_AUTO_UPDATE=1    
 elif [ ${os} == "linux" ]; then
   sudo apt --assume-yes update
   sudo apt --assume-yes upgrade
@@ -64,7 +62,7 @@ chsh -s $(which zsh)
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 # create new configuration
 
-cp .zshrc ~/.zshrc
+ln -s archive/.zshrc ~/.zshrc
 
 # Update vim to get useful support like clipboard and clientserver
 if [ ${os} == "mac" ]; then
@@ -73,7 +71,7 @@ elif [ ${os} == "linux" ]; then
   sudo apt --assume-yes install vim-gtk
 fi
 
-cp .vimrc ~/.vimrc
+ln -s .vimrc ~/.vimrc
 
 # Install plugins from command line 
 # https://github.com/junegunn/vim-plug/wiki/tips#install-plugins-on-the-command-line
