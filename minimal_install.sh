@@ -59,3 +59,8 @@ ln -s $(pwd)/.gitconfig ~/.gitconfig
 # 4. Add .vimrc
 ln -s $(pwd)/.vimrc ~/.vimrc
 
+# 5. Add vscode keybindings & settings
+if [ ${os} == "mac" ]; then
+  ln -s $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  ln -s $(pwd)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+fi
