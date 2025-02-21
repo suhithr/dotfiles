@@ -11,9 +11,6 @@ endif
 
 call plug#begin()
 
-" Vim-go plugin "
-Plug 'fatih/vim-go'
-
 " Color scheme
 Plug 'sickill/vim-monokai'
 
@@ -74,11 +71,6 @@ map <Leader> <Plug>(easymotion-prefix)
 " Maps <space>+k+b to open the nerdtree
 nnoremap <leader>kb :NERDTreeToggle<CR>
 
-let g:go_fmt_command = "goimports"
-
-" Make GoFmt also handle imports on save
-set statusline+=%F\ %l\:%c
-
 " Highlight words matched in search
 set hlsearch
 hi Search guibg=LightGreen
@@ -88,12 +80,6 @@ highlight Normal guifg=grey guibg=black
 
 " Highlight current line
 set cursorline
-
-" Save the macro to insert logrus.Info globally
-let @l = 'ilogrus.Info()'
-
-" Save macro to insert // TODO(suhith): globally
-let @j = 'i// TODO(suhith):a '
 
 " Set tab to 4 space indent
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim

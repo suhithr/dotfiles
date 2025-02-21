@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Suhith Rajesh
+	email = 10973031+suhithr@users.noreply.github.com
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[alias]
+	ct = commit
+	ctm = commit -m
+	ps = push
+	co = checkout
+	st = stash
