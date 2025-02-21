@@ -14,3 +14,5 @@
 	ps = push
 	co = checkout
 	st = stash
+[push]
+	autoSetupRemote = true

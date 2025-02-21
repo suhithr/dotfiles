@@ -36,6 +36,8 @@ fi
 if [ ${os} == "mac" ]; then
   # Install brew
   brew install fish 
+
+  # https://fishshell.com/docs/current/#default-shell
   # Add fish to list of shells
   sudo echo $(which fish) >> /etc/shells
   # Change shell to fish
@@ -43,6 +45,7 @@ if [ ${os} == "mac" ]; then
 elif [ ${os} == "linux" ]; then
     echo "we assume linux already has fish installed"
     echo $(which fish)
+    echo $(which fish) | sudo tee -a /etc/shells
     chsh -s $(which fish)
 fi
 
