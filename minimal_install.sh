@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# A change in philosophy; now I wish to just
+# A change in philosophy; now I wish to just install as little as possible
+# and throw in my dotfiles
+
 # 1. install/switch to fish shell
 # 2. add my .vimrc
 # 3. add my .gitconfig
@@ -45,11 +47,12 @@ elif [ ${os} == "linux" ]; then
 fi
 
 # 2. Add fish settings
-ln -s config.fish ~/.config/fish/config.fish
+ln -s $(pwd)/config.fish ~/.config/fish/config.fish
+
 
 # 3. Add .gitconfig shortcuts
-ln -s .gitconfig ~/.gitconfig
+ln -s $(pwd)/.gitconfig ~/.gitconfig
 
 # 4. Add .vimrc
-ln -s .vimrc ~/.vimrc
+ln -s $(pwd)/.vimrc ~/.vimrc
 
