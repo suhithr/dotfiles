@@ -1,4 +1,8 @@
-/opt/homebrew/bin/brew shellenv | source
+# only run this if we're on Darwin
+if uname | grep -q "Darwin"
+    /opt/homebrew/bin/brew shellenv | source
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
