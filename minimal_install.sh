@@ -49,18 +49,46 @@ elif [ ${os} == "linux" ]; then
     chsh -s $(which fish)
 fi
 
+timestamp_move() {
+    local FILE="$1"
+
+    if [[ -f "$FILE" ]]; then
+        local TIMESTAMP
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+        local EXT="${FILE##*.}"
+        local BASENAME="${FILE%.*}"
+
+        # Handle case where file has no extension
+        if [[ "$FILE" == "$BASENAME" ]]; then
+            mv "$FILE" "${FILE}_$TIMESTAMP"
+            echo "File moved to ${FILE}_$TIMESTAMP"
+        else
+            mv "$FILE" "${BASENAME}_$TIMESTAMP.$EXT"
+            echo "File moved to ${BASENAME}_$TIMESTAMP.$EXT"
+        fi
+    else
+        echo "File '$FILE' does not exist."
+    fi
+}
 # 2. Add fish settings
-ln -s $(pwd)/config.fish ~/.config/fish/config.fish
+timestamp_move "~/.config/fish/config.fish"
+ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
 
 
 # 3. Add .gitconfig shortcuts
-ln -s $(pwd)/.gitconfig ~/.gitconfig
+timestamp_move "~/.gitconfig"
+ln -sf $(pwd)/.gitconfig ~/.gitconfig
 
 # 4. Add .vimrc
-ln -s $(pwd)/.vimrc ~/.vimrc
+timestamp_move "~/.vimrc"
+ln -sf $(pwd)/.vimrc ~/.vimrc
 
 # 5. Add vscode keybindings & settings
 if [ ${os} == "mac" ]; then
   ln -s $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
   ln -s $(pwd)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 fi
+
+6. Add .tmux.conf
+ln -s $(pwd)/.tmux.conf ~/.tmux.conf
