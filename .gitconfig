@@ -7,7 +7,7 @@
 [init]
 	defaultBranch = main
 [credential]
-	helper = store
+	helper = osxkeychain
 [alias]
 	ct = commit
 	ctm = commit -m
